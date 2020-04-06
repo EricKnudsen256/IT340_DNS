@@ -1,0 +1,29 @@
+    1  sudo apt install -y bind9 bind9utils bind9-doc dnsutils
+    2  ifconfig
+    3  sudo nano /etc/bind/named.conf.local
+    4  sudo cp /etc/bind/db.local /etc/bind/forward.IT340.local.db
+    5  sudo nano /etc/bind/forward.IT340.local.db
+    6  sudo cp /etc/bind/db.127 /etc/bind/reverse.IT340.local.db
+    7  sudo nano /etc/bind/reverse.IT340.local.db
+    8  sudo named-checkconf
+    9  sudo named-checkzone hostname.local /etc/bind/forward.hostname.local.db
+   10  sudo named-checkzone IT340.local /etc/bind/forward.IT340.local.db
+   11  named-checkzone 1.168.192.in-addr.arpa /etc/bind/reverse.IT340.local.db
+   12  sudo systemctl restart bind9
+   13  sudo systemctl enable bind9
+   14  sudo systemctl status bind9
+   15* 
+   16  sudo nano /etc/bind/forward.IT340.local.db
+   17  sudo nano /etc/bind/reverse.IT340.local.db
+   18  sudo nano /etc/bind/named.conf.local
+   19  sudo named-checkconf
+   20  sudo named-checkzone IT340.local /etc/bind/forward.IT340.local.db
+   21  named-checkzone 1.168.192.in-addr.arpa /etc/bind/reverse.IT340.local.db
+   22  sudo systemctl restart bind9
+   23  sudo systemctl enable bind9
+   24  sudo systemctl status bind9
+   25  mkdir git
+   26  cd git
+   27  ls
+   28  history < history.txt
+   29  history > history.txt
